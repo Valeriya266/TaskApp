@@ -1,5 +1,8 @@
-import './App.css';
-import '../AppInfo/AppInfo';
+import {Component} from 'react';
+
+import AppInfo from '../app-info/app-info';
+
+import './app.css';
 
 function App() {
   return (
