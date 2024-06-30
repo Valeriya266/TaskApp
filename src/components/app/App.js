@@ -9,12 +9,18 @@ import TaskAddForm from '../task-add-panel/task-add-form';
 import './app.css';
 
 function App() {
+const data = [
+  {task: 'Стоматолог', date: '04.06.2024', increase: true},
+  {task: 'Корпоратив', date: '03.06.2024', increase: false},
+  {task: 'Уборка', date: '07.06.2024', increase: false}
+]
+
   return (
     <div className="app">
       <AppInfo/>
       <SearchPanel/>
       <AppFilter/>
-      <TaskList/>
+      <TaskList data={data}/>
       <TaskAddForm/>
     </div>
   );
