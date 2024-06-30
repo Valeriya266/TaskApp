@@ -10,9 +10,9 @@ import './app.css';
 
 function App() {
 const data = [
-  {task: 'Стоматолог', date: '04.06.2024', increase: true},
-  {task: 'Корпоратив', date: '03.06.2024', increase: false},
-  {task: 'Уборка', date: '07.06.2024', increase: false}
+  {task: 'Стоматолог', date: '04.06.2024', priority: true, id: 1},
+  {task: 'Корпоратив', date: '03.06.2024', priority: false, id: 2},
+  {task: 'Уборка', date: '07.06.2024', priority: false, id: 3}
 ]
 
   return (

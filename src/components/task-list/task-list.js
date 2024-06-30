@@ -5,8 +5,10 @@ import './task-list.css';
 const TaskList = ({data}) => {
     
 const elements = data.map(item => {
+const {id, ...itemProps} = item;
+
     return (
-        <TaskListItem {...item}/>
+        <TaskListItem key={id} {...itemProps}/>
     )
 })
 

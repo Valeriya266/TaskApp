@@ -1,9 +1,9 @@
 import './task-list-item.css';
 
-const TaskListItem = ({task, date, increase}) => {
+const TaskListItem = ({task, date, priority}) => {
 
     let classNames = 'list-group-item d-flex justify-content-between';
-    if (increase) {
+    if (priority) {
         classNames += ` increase`;
     }
 
