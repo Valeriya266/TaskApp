@@ -2,8 +2,8 @@ import './task-list-item.css';
 
 const TaskListItem = () => {
     return (
-        <li className='list-group-item'>
-            <span className="list-group-item-label"></span>
+        <li className='list-group-item d-flex justify-content-between'>
+            <span className="list-group-item-label">John Smith</span>
             <input type="text" className="list-group-item-input" />
             <div className='d-flex justify-content-center align-items-center'>
                 <button type="button"

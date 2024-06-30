@@ -2,7 +2,7 @@ import TaskListItem from "../task-list-item/task-list-item";
 
 import './task-list.css';
 
-const EmployeesList = () => {
+const TaskList = () => {
     return (
         <ul className="app-list list-group">
             <TaskListItem/>
