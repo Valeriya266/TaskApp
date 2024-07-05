@@ -2,13 +2,15 @@ import TaskListItem from "../task-list-item/task-list-item";
 
 import './task-list.css';
 
-const TaskList = ({data}) => {
+const TaskList = ({data, onDelete}) => {
     
 const elements = data.map(item => {
 const {id, ...itemProps} = item;
 
     return (
-        <TaskListItem key={id} {...itemProps}/>
+        <TaskListItem key={id} 
+            {...itemProps}
+            onDelete={() => onDelete(id)}/>
     )
 })
 
