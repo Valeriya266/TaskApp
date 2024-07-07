@@ -13,9 +13,9 @@ class App extends Component {
       super(props);
       this.state = {
         data: [
-          {task: 'Стоматолог', date: '04.06.2024', priority: true, id: 1},
-          {task: 'Корпоратив', date: '03.06.2024', priority: false, id: 2},
-          {task: 'Уборка', date: '07.06.2024', priority: false, id: 3}
+          {task: 'Стоматолог', date: '04.06.2024', priority: true, process: true, id: 1},
+          {task: 'Корпоратив', date: '03.06.2024', priority: false, process: false, id: 2},
+          {task: 'Уборка', date: '07.06.2024', priority: false, process: false, id: 3}
         ]
       },
       this.maxId = 4 
