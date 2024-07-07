@@ -46,6 +46,14 @@ class App extends Component {
       })
     }
 
+    onToggleIncrease = (id) => {
+      console.log (`Increase this ${id}`);
+    };
+
+    onToggleRise = (id) => {
+      console.log (`Rise this ${id}`);
+    };
+
 
 
     render() {
