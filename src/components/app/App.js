@@ -51,16 +51,18 @@ class App extends Component {
     render() {
       return(
         <div className="app">
-        <AppInfo/>
-        <SearchPanel/>
-        <AppFilter/>
-        <TaskList 
-            data={this.state.data}
-            onDelete={this.deleteItem}
-            onToggleIncrease={this.onToggleIncrease}
-            onToggleRise={this.onToggleRise}/>
-        <TaskAddForm 
-            onAdd={this.addItem}/>
+          <AppInfo/>
+          <div className="search-panel">
+            <SearchPanel/>
+          </div>
+          <AppFilter/>
+          <TaskList 
+              data={this.state.data}
+              onDelete={this.deleteItem}
+              onToggleIncrease={this.onToggleIncrease}
+              onToggleRise={this.onToggleRise}/>
+          <TaskAddForm 
+              onAdd={this.addItem}/>
       </div>
       )
     }
