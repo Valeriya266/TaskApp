@@ -34,6 +34,7 @@ class App extends Component {
         task,
         date, 
         priority: false,
+        process: false,
         id: this.maxId++
       }
 
