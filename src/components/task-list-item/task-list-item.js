@@ -24,7 +24,7 @@ class TaskListItem extends Component {
     }
 
     render() {
-    const {task, date, onDelete} = this.props;
+    const {task, date, onDelete, onToggleIncrease, onToggleRise} = this.props;
     const {priority, process} = this.state;
 
         let classNames = 'list-group-item d-flex justify-content-between';

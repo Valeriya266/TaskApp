@@ -17,6 +17,15 @@ class TaskAddForm extends Component {
         })
     };
 
+    onSubmit = (e) => {
+        e.preventDefault();
+        this.props.onAdd(this.state.name, this.state.salary);
+        this.setState({
+            name: '',
+            salary: ''
+        })
+    }
+
     render() {
         const {task, date} = this.state;
 
@@ -24,7 +33,8 @@ class TaskAddForm extends Component {
             <div className="app-add-form">
                 <h3>Добавьте новую задачу</h3>
                 <form
-                    className="add-form d-flex">
+                    className="add-form d-flex"
+                    onSubmit={this.onSubmit}>
                     <input type="text"
                         className="form-control new-post-label"
                         placeholder="Что за задача?"

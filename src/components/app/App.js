@@ -17,7 +17,8 @@ class App extends Component {
           {task: 'Корпоратив', date: '03.06.2024', priority: false, id: 2},
           {task: 'Уборка', date: '07.06.2024', priority: false, id: 3}
         ]
-      }
+      },
+      this.maxId = 4 
     }
 
     deleteItem = (id) => {
@@ -28,6 +29,25 @@ class App extends Component {
       })
     }
 
+    addItem = (task, date) => {
+      const newItem = {
+        task,
+        date, 
+        priority: false,
+        id: this.maxId++
+      }
+
+      this.setState(({data}) => {
+        const newArr = [...data, newItem];
+
+        return {
+          data: newArr
+        }
+      })
+    }
+
+
+
     render() {
       return(
         <div className="app">
@@ -36,8 +56,11 @@ class App extends Component {
         <AppFilter/>
         <TaskList 
             data={this.state.data}
-            onDelete={this.deleteItem}/>
-        <TaskAddForm/>
+            onDelete={this.deleteItem}
+            onToggleIncrease={this.onToggleIncrease}
+            onToggleRise={this.onToggleRise}/>
+        <TaskAddForm 
+            onAdd={this.addItem}/>
       </div>
       )
     }

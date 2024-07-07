@@ -10,7 +10,9 @@ const {id, ...itemProps} = item;
     return (
         <TaskListItem key={id} 
             {...itemProps}
-            onDelete={() => onDelete(id)}/>
+            onDelete={() => onDelete(id)}
+            onToggleIncrease={() => onToggleIncrease(id)}
+            onToggleRise={() => onToggleRise(id)}/>
     )
 })
 
