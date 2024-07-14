@@ -47,20 +47,36 @@ class App extends Component {
       })
     }
 
-    onToggleIncrease = (id) => {
-      console.log (`Increase this ${id}`);
+    onTogglePriority = (id) => {
+      this.setState(({data}) => ({
+        data: data.map(item => {
+          if (item.id === id) {
+            return {...item, priority: !item.priority}
+          }
+          return item;
+        })
+      }))
     };
 
-    onToggleRise = (id) => {
-      console.log (`Rise this ${id}`);
+    onToggleProcess = (id) => {
+      this.setState(({data}) => ({
+        data: data.map(item => {
+          if (item.id === id) {
+            return {...item, process: !item.process}
+          }
+          return item;
+        })
+      }))
     };
-
-
 
     render() {
+      const tasks = this.state.data.length;
+      const priorityTasks = this.state.data.filter(item => item.priority).length;
+
+
       return(
         <div className="app">
-          <AppInfo/>
+          <AppInfo tasks={tasks} priorityTasks={priorityTasks}/>
           <div className="search-panel">
             <SearchPanel/>
           </div>
