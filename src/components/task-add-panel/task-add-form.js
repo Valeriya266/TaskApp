@@ -19,10 +19,10 @@ class TaskAddForm extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.onAdd(this.state.name, this.state.salary);
+        this.props.onAdd(this.state.task, this.state.date);
         this.setState({
-            name: '',
-            salary: ''
+            task: '',
+            date: ''
         })
     }
 

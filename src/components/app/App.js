@@ -84,8 +84,8 @@ class App extends Component {
           <TaskList 
               data={this.state.data}
               onDelete={this.deleteItem}
-              onToggleIncrease={this.onToggleIncrease}
-              onToggleRise={this.onToggleRise}/>
+              onTogglePriority={this.onTogglePriority}
+              onToggleProcess={this.onToggleProcess}/>
           <TaskAddForm 
               onAdd={this.addItem}/>
       </div>

@@ -2,7 +2,7 @@ import './task-list-item.css';
 
 const TaskListItem = (props) => {
 
-    const {task, date, onDelete, onToggleIncrease, onToggleRise, priority, process} = props;
+    const {task, date, onDelete, onTogglePriority, onToggleProcess, priority, process} = props;
 
     let classNames = 'list-group-item d-flex justify-content-between';
     if (priority) {
@@ -16,12 +16,12 @@ const TaskListItem = (props) => {
     
     return (
         <li className={classNames}>
-            <span className="list-group-item-label" onClick={onToggleRise}>{task}</span>
+            <span className="list-group-item-label" onClick={onToggleProcess}>{task}</span>
             <input type="text" className="list-group-item-input" defaultValue={date}/>
             <div className='d-flex justify-content-center align-items-center'>
                 <button type="button"
                     className="btn-cookie btn-sm "
-                    onClick={onToggleIncrease}>
+                    onClick={onTogglePriority}>
                     <i className="fas fa-cookie"></i>    
                 </button>
     
