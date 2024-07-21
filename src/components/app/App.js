@@ -17,7 +17,8 @@ class App extends Component {
           {task: 'Корпоратив', date: '03.06.2024', priority: false, process: false, id: 2},
           {task: 'Уборка', date: '07.06.2024', priority: false, process: false, id: 3}
         ],
-        term: ''
+        term: '',
+        filter: 'all'
       };
       this.maxId = 4; 
     }
@@ -84,11 +85,22 @@ class App extends Component {
       this.setState({term});
     }
 
+    filterPost = (items, filter) => {
+      switch (filter){
+        case 'process':
+          return items.filter(item => item.process);
+        case 'priority':
+          return items.filter(item => item.priority);
+        default:
+          return items;
+      }
+    }
+
     render() {
       const tasks = this.state.data.length;
       const priorityTasks = this.state.data.filter(item => item.priority).length;
-      const {data, term} = this.state;
-      const visibleData = this.searchTask(data, term);
+      const {data, term, filter} = this.state;
+      const visibleData = this.filterPost(this.searchTask(data, term), filter);
 
       return(
         <div className="app">
