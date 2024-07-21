@@ -18,7 +18,7 @@ class App extends Component {
           {task: 'Уборка', date: '07.06.2024', priority: false, process: false, id: 3}
         ],
         term: ''
-      },
+      };
       this.maxId = 4 
     }
 
