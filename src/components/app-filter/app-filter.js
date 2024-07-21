@@ -5,12 +5,12 @@ const AppFilter = (props) => {
         {name: 'all', label: 'Все задачи'},
         {name: 'priority', label: 'В приоритете'},
         {name: 'in process', label: 'В процессе'}
-    ]
+    ];
 
     const buttons = buttonData.map(({name, label}) => 
         {
         const active = props.filter === name; 
-        const clazz = active ? 'btn-light' : 'btn-outline-light';
+        const clazz = active ? 'btn-light' : 'btn-outline-dark';
         
         return (
             <button type='button'
