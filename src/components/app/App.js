@@ -19,7 +19,7 @@ class App extends Component {
         ],
         term: ''
       };
-      this.maxId = 4 
+      this.maxId = 4; 
     }
 
     deleteItem = (id) => {
