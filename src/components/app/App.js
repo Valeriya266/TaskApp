@@ -16,7 +16,8 @@ class App extends Component {
           {task: 'Стоматолог', date: '04.06.2024', priority: true, process: true, id: 1},
           {task: 'Корпоратив', date: '03.06.2024', priority: false, process: false, id: 2},
           {task: 'Уборка', date: '07.06.2024', priority: false, process: false, id: 3}
-        ]
+        ],
+        term: ''
       },
       this.maxId = 4 
     }
@@ -69,20 +70,37 @@ class App extends Component {
       }))
     };
 
+    searchTask = (items, term) => {
+      if(term.length === 0) {
+        return items;
+      }
+
+      return items.filter(item => {
+        return item.name.indexOf(term) > -1
+      })
+    }
+
+    onUpdateSearch = (term) => {
+      this.setState({term});
+    }
+
     render() {
       const tasks = this.state.data.length;
       const priorityTasks = this.state.data.filter(item => item.priority).length;
-
+      const {data, term} = this.state;
+      const visibleData = this.searchTask(data, term);
 
       return(
         <div className="app">
           <AppInfo tasks={tasks} priorityTasks={priorityTasks}/>
           <div className="search-panel">
-            <SearchPanel/>
+            <SearchPanel 
+              data={this.visibleData}
+              onUpdateSearch={this.onUpdateSearch}/>
           </div>
           <AppFilter/>
           <TaskList 
-              data={this.state.data}
+              data={visibleData}
               onDelete={this.deleteItem}
               onTogglePriority={this.onTogglePriority}
               onToggleProcess={this.onToggleProcess}/>
