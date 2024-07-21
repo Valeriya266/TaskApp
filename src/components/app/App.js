@@ -96,6 +96,10 @@ class App extends Component {
       }
     }
 
+    onFilterSelect = (filter) => {
+      this.setState({filter})
+    }
+
     render() {
       const tasks = this.state.data.length;
       const priorityTasks = this.state.data.filter(item => item.priority).length;
@@ -109,7 +113,7 @@ class App extends Component {
             <SearchPanel 
               onUpdateSearch={this.onUpdateSearch}/>
           </div>
-          <AppFilter filter={filter}/>
+          <AppFilter filter={filter} onFilterSelec={this.onFilterSelect}/>
           <TaskList 
               data={visibleData}
               onDelete={this.deleteItem}
