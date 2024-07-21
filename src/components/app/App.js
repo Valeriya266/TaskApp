@@ -95,7 +95,6 @@ class App extends Component {
           <AppInfo tasks={tasks} priorityTasks={priorityTasks}/>
           <div className="search-panel">
             <SearchPanel 
-              data={this.visibleData}
               onUpdateSearch={this.onUpdateSearch}/>
           </div>
           <AppFilter/>
