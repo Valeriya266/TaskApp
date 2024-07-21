@@ -109,7 +109,7 @@ class App extends Component {
             <SearchPanel 
               onUpdateSearch={this.onUpdateSearch}/>
           </div>
-          <AppFilter/>
+          <AppFilter filter={filter}/>
           <TaskList 
               data={visibleData}
               onDelete={this.deleteItem}
