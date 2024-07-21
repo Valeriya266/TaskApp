@@ -2,21 +2,21 @@ import './app-filter.css';
 
 const AppFilter = (props) => {
     const buttonData = [
-        {name: 'all', label: 'Все задачи'},
-        {name: 'priority', label: 'В приоритете'},
-        {name: 'in process', label: 'В процессе'}
+        {task: 'all', label: 'Все задачи'},
+        {task: 'priority', label: 'В приоритете'},
+        {task: 'in process', label: 'В процессе'}
     ];
 
-    const buttons = buttonData.map(({name, label}) => 
+    const buttons = buttonData.map(({task, label}) => 
         {
-        const active = props.filter === name; 
+        const active = props.filter === task; 
         const clazz = active ? 'btn-light' : 'btn-outline-dark';
         
         return (
             <button type='button'
                 className={ `btn ${clazz}`}
-                key={name}
-                onClick={() => props.onFilterSelect(name)} >   
+                key={task}
+                onClick={() => props.onFilterSelect(task)} >   
                     {label}
             </button>
         )
